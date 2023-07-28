@@ -8,6 +8,7 @@ body {
   color: #050507;
   font-size: 1rem;
   /*要 確認 font-family: ;*/
+  margin: 30px;
 }
 
 /* 要 img や list が無ければ消去
@@ -28,18 +29,30 @@ a {
 #header {
   display: flex;
   align-items: center;
-  margin: 30px ;
+  /* margin: 30px ; */
   /* max-width: 1400px; */
 }
 
 #header h1 {
   margin-right: 30px;
+  
 }
-/* --ハンバーガーメニュー------------ */
-/* --#mainvisual------------------- */
-/* --#information------------------ */
-/* --#access----------------------- */
-/* --#contact---------------------- */
+
+/* --#main------------------- */
+main
+
+/* --#main_menu----------------------- */
+.flex_area {
+  display: flex;
+}
+.flex_area input {
+  border: 1px solid #050507;
+}
+
+
+/* --#sub_menu---------------------- */
+
+
 /* --#footer----------------------- */
 #footer {
   text-align: center;
