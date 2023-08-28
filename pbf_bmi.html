@@ -47,15 +47,23 @@
           <div class="form_area">
             <div class="flex_area">
               <div class="main_menu_input">
-                <div class="flex_area">
-                  <p>身長</p><input type="text"><p>cm</p>
+                <div class="flex_area height">
+
+                  <p class="input_item_name">身長</p>
+                  <input type="number" id="height" name="height_input" value="" placeholder="例：160.0">
+                  <!-- <script>height(height.value)</script> -->
+                  <p class="unit">cm</p>
                 </div>
-                <div class="flex_area">
-                  <p>体重</p><input type="text"><p>kg</p>
+
+                <div class="flex_area weight">
+                  <p class="input_item_name">体重</p>
+                  <input type="number" id="weight" name="weight_input" value="" placeholder= "例：55.5">
+                  <p class="unit">kg</p>
                 </div>
+
               </div>
 
-              <input type="submit" value="BMI 計算">
+              <input type="submit" value="BMI 計算" class="main_menu_send_btn">
             </div>
           </div>
         </form>
@@ -68,11 +76,15 @@
             <div class="flex_area">
               <div class="sub_menu_input">
                 <div class="flex_area">
-                  <p>自分の体型への自己満足度</p><input type="text"><p>%</p>
+
+                  <p class="input_item_name">自分の体型への自己満足度</p>
+                  <input type="number" id="satisfaction_level" placeholder="例：70">
+                  <p class="unit">%</p>
+
                 </div>
               </div>
 
-              <input type="submit" value="BMI 計算 ( 満足度込み )">
+              <input type="submit" value="BMI 計算 ( 満足度込み )" class="sub_menu_send_btn">
             </div>
           </div>
         </form>

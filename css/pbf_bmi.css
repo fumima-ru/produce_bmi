@@ -9,6 +9,7 @@ body {
   font-size: 1rem;
   /*要 確認 font-family: ;*/
   margin: 30px;
+  max-width: 850px;
 }
 
 /* 要 img や list が無ければ消去
@@ -25,37 +26,94 @@ a {
   text-decoration: none;
 }
 
+input[type='submit'] {
+  padding: 10px;
+}
+
 /* --#header----------------------- */
 #header {
   display: flex;
   align-items: center;
-  /* margin: 30px ; */
+  margin-bottom: 50px;
   /* max-width: 1400px; */
 }
 
-#header h1 {
+#header .site-title {
   margin-right: 30px;
   
 }
 
-/* --#main------------------- */
-main
-
-/* --#main_menu----------------------- */
-.flex_area {
-  display: flex;
+input[type="number"] {
+  max-width: 100%;
+  width: 10em;
+  border-radius: 5px;
 }
-.flex_area input {
+
+/* --#main------------------- */
+.flex_area input[type="number"] {
   border: 1px solid #050507;
 }
 
+::placeholder {
+  text-align: center;
+}
+
+/* --#main_menu----------------------- */
+#main_menu, #result_main_menu {
+  padding: 50px;
+}
+
+.flex_area {
+  display: flex;
+  align-items: baseline;
+  align-items: center;
+}
+
+.main_menu_input {
+  margin-right: 80px;
+}
+
+.input_item_name {
+  margin-right: 10px;
+}
+
+.unit {
+ margin-left: 10px;
+}
+
+.height {
+  margin-bottom: 30px;
+}
+
+.main_menu_send_btn {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(4, 103, 252);
+  border-radius: 5px;
+}
+
+
 
 /* --#sub_menu---------------------- */
+#sub_menu, #result_sub_menu {
+  padding: 50px;
+}
 
+.sub_menu_input {
+  margin-right: 80px;
+}
+
+.sub_menu_send_btn {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(4, 103, 252);
+  border-radius: 5px;
+}
 
 /* --#footer----------------------- */
 #footer {
   text-align: center;
+  padding: 50px;
 }
 /* --レスポンシブ------------------- */
 /* --レスポンシブ#information------- */

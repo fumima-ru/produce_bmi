@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>pbf_bmi</title>
+    <meta name="description" content="身長と体重を入力することでBMIを算出。自分の体型への自己満足度を入力すれば一言メッセージも表示されます。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="後で要ショートカットアイコン入れるimg/pbf_bmi_favicon.ico"> -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!--Google Fonts設定　後で要フォント指定-->
+    <!-- <link rel=link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
+
+    <!--Font Awesome読み込み-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!--css読み込み-->
+    <link rel="stylesheet" href="css/pbf_bmi.css">
+    
+    <!--Google の CDNを使用-->
+    <!--(CDNを経由する方法であればjQueryをダウンロードする必要がない)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--jsファイル読み込み -->  
+    <script src="js/pbf_bmi.js"></script>
+
+  </head>
+
+  <body>
+    <!--#header-------------------------->
+    <header id="header">
+      <!-- flex -->
+      <h1 class="site-title">
+        <a href="pbf_bmi.html">BMI 計算</a>
+      </h1>
+      <div class="logo">
+        <a href="https://fumima-ru.com/">Produced by fumima_ru</a>
+      </div>
+    </header>
+
+    <!--main----------------------------->
+    <main>
+      <!-- JavaScript jQueryエリア -->
+      <div id="result_main_menu">
+        <p>BMIは<script>bmi();</script><!-- <script>bmi_click();</script> -->です</p>
+        <p>統計上もっとも病気になりにくい、あなたの体重は<!-- 〇〇 -->kgです(BMI=22)</p>
+        
+      </div>
+
+      <!-- PHPエリア -->
+      <div id="result_sub_menu">
+        <p>本日のメッセージ</p>
+        <p><!-- ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○ --></p>
+      </div>
+
+      <div id="ad">
+
+      </div>
+      
+    </main>
+
+    <!--#footer-------------------------->
+    <footer id="footer">
+      <p class="copyright">&copy;2023 fumima_ru</p>
+    </footer>
+  </body>
+</html>
+
+<!-- 要 の箇所を後で記述or確認すること -->
