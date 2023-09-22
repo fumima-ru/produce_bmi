@@ -23,7 +23,7 @@
     <!--(CDNを経由する方法であればjQueryをダウンロードする必要がない)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--jsファイル読み込み -->  
-    <script src="js/pbf_bmi.js"></script>
+    <script defer src="js/pbf_bmi.js"></script>
 
   </head>
 
@@ -63,7 +63,7 @@
 
               </div>
 
-              <input type="submit" value="BMI 計算" class="main_menu_send_btn">
+              <input type="submit" id="main_menu_send_btn" value="BMI 計算" onclick="">
             </div>
           </div>
         </form>
@@ -84,11 +84,15 @@
                 </div>
               </div>
 
-              <input type="submit" value="BMI 計算 ( 満足度込み )" class="sub_menu_send_btn">
+              <input type="submit" id="sub_menu_send_btn" value="BMI 計算 ( 満足度込み )">
             </div>
           </div>
         </form>
       </div>
+      <!-- テストエリア -->
+      <script>document.write('<p>test</p>');</script>
+      <script></script>
+      <!-- テストエリア -->
     </main>
 
     <!--#footer-------------------------->

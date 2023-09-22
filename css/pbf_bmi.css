@@ -85,7 +85,7 @@ input[type="number"] {
   margin-bottom: 30px;
 }
 
-.main_menu_send_btn {
+#main_menu_send_btn {
   color: white;
   font-weight: bold;
   background-color: rgb(4, 103, 252);
@@ -103,7 +103,7 @@ input[type="number"] {
   margin-right: 80px;
 }
 
-.sub_menu_send_btn {
+#sub_menu_send_btn {
   color: white;
   font-weight: bold;
   background-color: rgb(4, 103, 252);
