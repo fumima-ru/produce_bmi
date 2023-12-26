@@ -7,118 +7,138 @@ html {
 body {
   color: #050507;
   font-size: 1rem;
-  /*要 確認 font-family: ;*/
-  margin: 30px;
-  max-width: 850px;
+  max-width: 295px;
+  min-width: 295px;
+  margin: 10px auto;
 }
-
-/* 要 img や list が無ければ消去
-img {
-  max-width: 100%;
-}
-
-li {
-  list-style: none;
-} */
 
 a {
   color: #050507;
   text-decoration: none;
 }
 
-input[type='submit'] {
-  padding: 10px;
+.flex_area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --#header----------------------- */
 #header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-  /* max-width: 1400px; */
+  text-align: center;
+  padding: 20px;
 }
 
-#header .site-title {
-  margin-right: 30px;
-  
+/* --main------------------- */
+main {
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
+/* --#input_field----------------------- */
 input[type="number"] {
   max-width: 100%;
   width: 10em;
   border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #050507;
+  text-align: center;
 }
 
-/* --#main------------------- */
-.flex_area input[type="number"] {
-  border: 1px solid #050507;
+label {
+  margin-right: 10px;
 }
 
 ::placeholder {
   text-align: center;
 }
 
-/* --#main_menu----------------------- */
-#main_menu, #result_main_menu {
-  padding: 50px;
-}
-
-.flex_area {
-  display: flex;
-  align-items: baseline;
-  align-items: center;
-}
-
-.main_menu_input {
-  margin-right: 80px;
-}
-
-.input_item_name {
-  margin-right: 10px;
-}
-
 .unit {
  margin-left: 10px;
 }
 
-.height {
+.height, .weight {
   margin-bottom: 30px;
 }
 
-#main_menu_send_btn {
+/* --#bmi_calc_btn----------------------- */
+#bmi_calc_btn {
+  height: 50px;
   color: white;
   font-weight: bold;
   background-color: rgb(4, 103, 252);
   border-radius: 5px;
+  display: block;
+  max-width: 100%;
+  width: 10em;
+  margin: 0 0 30px 75px;
+  cursor: pointer;
 }
 
-
-
-/* --#sub_menu---------------------- */
-#sub_menu, #result_sub_menu {
-  padding: 50px;
+#bmi_calc_btn:hover {
+  opacity: 0.6;
 }
 
-.sub_menu_input {
-  margin-right: 80px;
+#result {
+  margin-bottom: 30px;
 }
 
-#sub_menu_send_btn {
-  color: white;
-  font-weight: bold;
-  background-color: rgb(4, 103, 252);
+#result .flex_area {
+  gap: 0 10px;
+}
+
+/* --#result_display----------------------- */
+#result_display {
+  border: solid 1px #050507;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
   border-radius: 5px;
+  max-width: 100%;
+  width: 10em;
+}
+
+/* --#reference_value----------------------- */
+#reference_value {
+  text-align: center;
+}
+
+.flex_reference_value {
+  flex-wrap: wrap;
+  border: 1px solid #050507;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.flex_reference_value dt {
+  width: 43%;
+  text-align: left;
+  margin-left: 7%;
+  margin-bottom: 5px;
+  border-bottom: solid 1px rgba(5, 5, 7, 0.2);
+}
+
+.flex_reference_value dt:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.flex_reference_value dd {
+  width: 43%;
+  text-align: right;
+  margin-bottom: 5px;
+  margin-right: 7%;
+  border-bottom: solid 1px rgba(5, 5, 7, 0.2);
+}
+
+.flex_reference_value dd:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* --#footer----------------------- */
 #footer {
   text-align: center;
-  padding: 50px;
+  padding: 30px;
 }
-/* --レスポンシブ------------------- */
-/* --レスポンシブ#information------- */
-/* --レスポンシブ#access------------ */
-/* --レスポンシブ#contact----------- */
-/* --レスポンシブ#footer------------ */
-
-/* --やることリスト----------------- */
