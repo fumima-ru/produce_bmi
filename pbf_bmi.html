@@ -2,104 +2,86 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <title>pbf_bmi</title>
-    <meta name="description" content="身長と体重を入力することでBMIを算出。自分の体型への自己満足度を入力すれば一言メッセージも表示されます。">
+    <title>BMI 計算</title>
+    <meta name="description" content="身長と体重を入力することで小数点第二位で四捨五入したBMIを算出するシンプルなWebページです。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="後で要ショートカットアイコン入れるimg/pbf_bmi_favicon.ico"> -->
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <!--Google Fonts設定　後で要フォント指定-->
-    <!-- <link rel=link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> -->
-
-    <!--Font Awesome読み込み-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
+    
     <!--css読み込み-->
     <link rel="stylesheet" href="css/pbf_bmi.css">
-    
-    <!--Google の CDNを使用-->
-    <!--(CDNを経由する方法であればjQueryをダウンロードする必要がない)-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--jsファイル読み込み -->  
-    <script defer src="js/pbf_bmi.js"></script>
-
   </head>
 
   <body>
     <!--#header-------------------------->
     <header id="header">
-      <!-- flex -->
-      <h1 class="site-title">
+      <h1 class="site_title">
         <a href="pbf_bmi.html">BMI 計算</a>
       </h1>
-      <div class="logo">
-        <a href="https://fumima-ru.com/">Produced by fumima_ru</a>
-      </div>
     </header>
 
     <!--main----------------------------->
     <main>
-      <!-- JavaScript jQueryエリア -->
-      <div id="main_menu">
-        <form action="pbf_bmi_result.html" method="post">
-          <div class="form_area">
-            <div class="flex_area">
-              <div class="main_menu_input">
-                <div class="flex_area height">
+      
+      <div id="input_field">
+        <div class="flex_area height">
+          <label for="height">身長</label>
+          <input type="number" id="height" placeholder="例：155.5" required tabindex="1">
+          <p class="unit">cm</p>
+        </div>
 
-                  <p class="input_item_name">身長</p>
-                  <input type="number" id="height" name="height_input" value="" placeholder="例：160.0">
-                  <!-- <script>height(height.value)</script> -->
-                  <p class="unit">cm</p>
-                </div>
-
-                <div class="flex_area weight">
-                  <p class="input_item_name">体重</p>
-                  <input type="number" id="weight" name="weight_input" value="" placeholder= "例：55.5">
-                  <p class="unit">kg</p>
-                </div>
-
-              </div>
-
-              <input type="submit" id="main_menu_send_btn" value="BMI 計算" onclick="">
-            </div>
-          </div>
-        </form>
+        <div class="flex_area weight">
+          <label for="weight">体重</label>
+          <input type="number" id="weight" placeholder= "例：55.5" required tabindex="2">
+          <p class="unit">kg</p>
+        </div>
+          
+        <button type="button" id="bmi_calc_btn" onclick="calculateBMI()" tabindex="3">BMI 計算</button>
       </div>
 
-      <!-- PHPエリア -->
-      <div id="sub_menu">
-        <form action="pbf_bmi_result.html" method="post">
-          <div class="form_area">
-            <div class="flex_area">
-              <div class="sub_menu_input">
-                <div class="flex_area">
-
-                  <p class="input_item_name">自分の体型への自己満足度</p>
-                  <input type="number" id="satisfaction_level" placeholder="例：70">
-                  <p class="unit">%</p>
-
-                </div>
-              </div>
-
-              <input type="submit" id="sub_menu_send_btn" value="BMI 計算 ( 満足度込み )">
-            </div>
-          </div>
-        </form>
+      <div id="result">
+        <div class="flex_area">
+          <p>BMIは</p>
+          <div id="result_display"></div>
+          <p>です</p>
+        </div>
       </div>
-      <!-- テストエリア -->
-      <script>document.write('<p>test</p>');</script>
-      <script></script>
-      <!-- テストエリア -->
+
+      <div id="reference_value">
+        <dl class="flex_area flex_reference_value">
+          <dt>18.5未満</dt>
+          <dd>低体重</dd>
+          <dt>18.5〜24.99</dt>
+          <dd>普通体重</dd>
+          <dt>25以上</dt>
+          <dd>肥満</dd>
+        </dl>
+        <p>上記の数値を<br>健康管理の目安として御活用ください</p>
+      </div>
+
     </main>
 
     <!--#footer-------------------------->
     <footer id="footer">
       <p class="copyright">&copy;2023 fumima_ru</p>
     </footer>
+
+    <script>
+      function calculateBMI() {
+        // 身長と体重を取得
+        const HEIGHT = parseFloat(document.getElementById('height').value);
+        const WEIGHT = parseFloat(document.getElementById('weight').value);
+
+        // BMIを計算
+        const BMI = WEIGHT / (HEIGHT / 100) ** 2;
+        
+        // 結果を表示
+        document.getElementById('result_display').innerText = BMI.toFixed(2);
+      };
+    </script>
+
   </body>
 </html>
-
-<!-- 要 の箇所を後で記述or確認すること -->
