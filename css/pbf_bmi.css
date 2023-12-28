@@ -61,6 +61,11 @@ label {
   margin-bottom: 30px;
 }
 
+/* --テキスト行の高さを指定--------------- */
+#footer p, #reference_value p{
+  line-height: 30px;
+}
+
 /* --#bmi_calc_btn----------------------- */
 #bmi_calc_btn {
   height: 50px;
@@ -140,5 +145,5 @@ label {
 /* --#footer----------------------- */
 #footer {
   text-align: center;
-  padding: 30px;
+  padding: 35px;
 }
