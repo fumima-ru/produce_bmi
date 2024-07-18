@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>BMI計算 - 身長と体重から簡単にBMIを計算する</title>
-    <meta name="description" content="このウェブページは、身長と体重を入力することで簡単にBMI（Body Mass Index）を計算するツールです。小数点第二位で四捨五入して正確なBMIを取得しましょう。健康管理や体重管理に役立ちます。">
+    <meta name="description" content="BMI（Body Mass Index）を簡単に計算するオンラインツールです。身長と体重を入力するだけで、正確なBMIを小数点第二位で四捨五入して取得できます。肥満度を知ることで、健康管理や体重管理に役立ちます。理想的な体重を把握しましょう。今すぐ使用することで、健康な生活をサポートします。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ファビコン -->
@@ -18,40 +18,40 @@
   <body>
     <!--#header-------------------------->
     <header id="header">
-      <h1 class="site_title">
-        <a href="pbf_bmi.html">BMI計算</a>
+      <h1 class="header__site-title">
+        <a href="produce_bmi.html">BMI計算</a>
       </h1>
     </header>
 
     <!--main----------------------------->
     <main>
       
-      <div id="input_field">
-        <div class="flex_area height">
+      <div id="input-section">
+        <div class="flex-area input-section__height">
           <label for="height">身長</label>
           <input type="number" id="height" placeholder="例：155.5" required tabindex="1">
           <p class="unit">cm</p>
         </div>
 
-        <div class="flex_area weight">
+        <div class="flex-area input-section__weight">
           <label for="weight">体重</label>
           <input type="number" id="weight" placeholder= "例：55.5" required tabindex="2">
           <p class="unit">kg</p>
         </div>
           
-        <button type="button" id="bmi_calc_btn" onclick="calculateBMI()" tabindex="3">計算</button>
+        <button type="button" class="input-section__bmi-calc-btn" onclick="calculateBMI()" tabindex="3">計算</button>
       </div>
 
       <div id="result">
-        <div class="flex_area">
+        <div class="flex-area">
           <p>BMIは</p>
-          <div id="result_display"></div>
+          <div class="result__display"></div>
           <p>です</p>
         </div>
       </div>
 
-      <div id="reference_value">
-        <dl class="flex_area flex_reference_value">
+      <div id="reference-value">
+        <dl class="flex-area reference-value__flex-area">
           <dt>18.5未満</dt>
           <dd>低体重</dd>
           <dt>18.5〜24.99</dt>
@@ -59,14 +59,14 @@
           <dt>25以上</dt>
           <dd>肥満</dd>
         </dl>
-        <p>上記の数値を<br>健康管理の目安として御活用ください</p>
+        <p class="reference-value__note">上記の数値を<br>健康管理の目安として御活用ください</p>
       </div>
 
     </main>
 
     <!--#footer-------------------------->
     <footer id="footer">
-      <p class="copyright">&copy;2023 fumima_ru<br>2023.12.28_new_release</p>
+      <p class="footer__copyright">&copy;2023 fumima_ru<br>2023.12.28_new_release</p>
     </footer>
 
     <script>
@@ -79,7 +79,7 @@
         const BMI = WEIGHT / (HEIGHT / 100) ** 2;
         
         // 結果を表示
-        document.getElementById('result_display').innerText = BMI.toFixed(2);
+        document.querySelector('.result__display').innerText = BMI.toFixed(2);
       };
     </script>
 
