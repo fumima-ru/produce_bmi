@@ -17,7 +17,7 @@ a {
   text-decoration: none;
 }
 
-.flex_area {
+.flex-area {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@ main {
   font-size: 1rem;
 }
 
-/* --#input_field----------------------- */
+/* --#input-section----------------------- */
 input[type="number"] {
   max-width: 100%;
   width: 10em;
@@ -57,17 +57,12 @@ label {
  margin-left: 10px;
 }
 
-.height, .weight {
+.input-section__height, .input-section__weight {
   margin-bottom: 30px;
 }
 
-/* --テキスト行の高さを指定--------------- */
-#footer p, #reference_value p{
-  line-height: 30px;
-}
-
-/* --#bmi_calc_btn----------------------- */
-#bmi_calc_btn {
+/* --..input-section__bmi-calc-btn------ */
+.input-section__bmi-calc-btn {
   height: 50px;
   color: white;
   font-weight: bold;
@@ -80,7 +75,7 @@ label {
   cursor: pointer;
 }
 
-#bmi_calc_btn:hover {
+.input-section__bmi-calc-btn:hover {
   opacity: 0.6;
 }
 
@@ -88,12 +83,12 @@ label {
   margin-bottom: 30px;
 }
 
-#result .flex_area {
+#result .flex-area {
   gap: 0 10px;
 }
 
-/* --#result_display----------------------- */
-#result_display {
+/* --.result__display----------------------- */
+.result__display {
   border: solid 1px #050507;
   height: 50px;
   line-height: 50px;
@@ -103,12 +98,12 @@ label {
   width: 10em;
 }
 
-/* --#reference_value----------------------- */
-#reference_value {
+/* --#reference-value----------------------- */
+#reference-value {
   text-align: center;
 }
 
-.flex_reference_value {
+.reference-value__flex-area {
   flex-wrap: wrap;
   border: 1px solid #050507;
   border-radius: 5px;
@@ -116,7 +111,7 @@ label {
   margin-bottom: 30px;
 }
 
-.flex_reference_value dt {
+.reference-value__flex-area dt {
   width: 43%;
   text-align: left;
   margin-left: 7%;
@@ -124,12 +119,12 @@ label {
   border-bottom: solid 1px rgba(5, 5, 7, 0.2);
 }
 
-.flex_reference_value dt:last-of-type {
+.reference-value__flex-area dt:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
 }
 
-.flex_reference_value dd {
+.reference-value__flex-area dd {
   width: 43%;
   text-align: right;
   margin-bottom: 5px;
@@ -137,13 +132,21 @@ label {
   border-bottom: solid 1px rgba(5, 5, 7, 0.2);
 }
 
-.flex_reference_value dd:last-of-type {
+.reference-value__flex-area dd:last-of-type {
   border-bottom: none;
   margin-bottom: 0;
+}
+
+.reference-value__note {
+  line-height: 30px;
 }
 
 /* --#footer----------------------- */
 #footer {
   text-align: center;
   padding: 35px;
+}
+
+.footer__copyright {
+  line-height: 30px;
 }
