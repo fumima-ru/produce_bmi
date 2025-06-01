@@ -147,6 +147,36 @@ label {
   padding: 35px;
 }
 
+#siteinfo {
+  margin-bottom: 20px;
+}
+
+#siteinfo ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+
+.siteinfo__list {
+  display: inline;
+  font-size: 0.85rem;
+}
+
+#siteinfo a {
+  color: #1a0dab;
+}
+
+#siteinfo a:hover {
+  text-decoration: underline;
+}
+
+#siteinfo span {
+  opacity: 0.5;
+  padding: 0 0.5rem;
+}
+
 .footer__copyright {
   line-height: 30px;
 }
